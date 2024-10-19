@@ -1,0 +1,59 @@
+{% extends 'home.html'%}
+{% block base %}
+<head>
+<style>
+    table,td,th{
+        border:solid 2px black;
+        border-collapse: collapse;
+        text-align: center;            
+        padding:3px;
+    }
+</style>
+</head>
+<body>
+<center>
+<form action="{% url 'update' all.id %}" method="POST">
+{% csrf_token %}
+<table>
+    <tr>
+        <td> <label for="username">NAME:</label></td>
+        <td> <input type="text" id="username" value="{{all.name}}" name="name"><br>
+        </td>
+    </tr>
+    <tr>
+        <td><label for="age">AGE:</label></td>
+        <td><input type="number" id="age" value='{{all.age}}'name="age"><br></td>
+    </tr>
+    <tr>
+        <td><label for="email">EMAIL:</label></td>
+        <td><input type="email" id="email" value="{{all.email}}" name="email"><br></td>
+    </tr>
+    <tr>
+        <td><label for="pass">PASSWORD:</label></td>
+        <td><input type="password" id="pass" value="{{all.password}}" name="pass"></td>
+    </tr>
+   <tr>
+    <td colspan="2"> <input type="submit"></td>
+   </tr>
+    
+    
+    
+    
+    
+    
+   
+</table>
+</form>
+</center>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+{% endblock%}

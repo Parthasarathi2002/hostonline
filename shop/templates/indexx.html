@@ -1,0 +1,16 @@
+{% extends "home.html"%}
+{% block name%}
+    <h2 style="text-align:center">parthasarathi</h2>
+     {{name}}
+     {{number}}
+     {{dis}}
+
+     {% for i in number %}
+     {% if i|divisibleby:2%}
+     <h1 style="text-align:center">{{i}}</h1>
+     <br>
+     {%else%}
+     <h1 style="text-align:center">odd:{{i}}</h1>
+     {%endif%}
+     {% endfor%}
+{% endblock%}
